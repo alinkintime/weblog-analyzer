@@ -51,6 +51,38 @@ public class LogAnalyzer
     }
     
     /**
+     * Return the busiest hour of day
+     */
+    public int busiestHour()
+    {
+         int busiestHour = 0;
+         for (int hour = 1; hour < hourCounts.length; hour++)
+         {
+             if(hourCounts[hour] > hourCounts[busiestHour])
+             {
+                 busiestHour = hour;
+             }
+         }
+         return busiestHour;
+    }
+    
+        /**
+     * Return the quietest hour of day
+     */
+    public int quietestHour()
+    {
+         int quietestHour = 0;
+         for (int hour = 1; hour < hourCounts.length; hour++)
+         {
+             if(hourCounts[hour] < hourCounts[quietestHour])
+             {
+                 quietestHour = hour;
+             }
+         }
+         return quietestHour;
+    }
+    
+    /**
      * Print the hourly counts.
      * These should have been set with a prior
      * call to analyzeHourlyData.
